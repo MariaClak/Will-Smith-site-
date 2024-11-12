@@ -1,12 +1,10 @@
-let show = true;
-const menuContent = document.querySelector('.content');
-const menuToggle = menuContent.querySelector('.menu-toggle');
+document.addEventListener('DOMContentLoaded', () => {
+    const flashcards = document.querySelectorAll('.flashcard');
+    
+    flashcards.forEach(flashcard => {
+        flashcard.addEventListener('click', () => {
+            flashcard.querySelector('.card').classList.toggle('flip');
+        });
+    });
+});
 
-
-menuToggle.addEventListener('click', () => {
-
-    document.body.style.overflow = show ? 'hidden' : 'initial'
-
-    menuContent.classList.toggle('on', show);
-    show = !show;
-})
